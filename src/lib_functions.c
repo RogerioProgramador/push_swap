@@ -1,0 +1,64 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/23 15:55:02 by coder             #+#    #+#             */
+/*   Updated: 2022/08/26 19:22:54 by coder            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../pushswap.h"
+
+int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
+}
+
+void	ft_putstr(char *s)
+{
+	if (!s)
+		return ;
+	while (*s)
+		write(1, s++, 1);
+}
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	size;
+
+	size = 0;
+	while (s[size])
+		size++;
+	return (size);
+}
+
+int	ft_atoi(const char *str)
+{
+	int	res;
+	int	sign;
+	int	i;
+
+	res = 0;
+	sign = 1;
+	i = 0;
+	while ((*str == '\t') || (*str == '\v') || (*str == '\f') || (*str == '\r')
+		|| (*str == ' ') || (*str == '\n'))
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign *= -1;
+		str++;
+	}
+	while (*str && str[i] >= '0' && *str <= '9')
+	{
+		res = (res * 10) + (*str - '0');
+		str++;
+	}
+	return (res * sign);
+}
