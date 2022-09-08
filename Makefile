@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: coder <coder@student.42.fr>                +#+  +:+       +#+         #
+#    By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/20 13:20:43 by rsiqueir          #+#    #+#              #
-#    Updated: 2022/09/03 21:16:50 by coder            ###   ########.fr        #
+#    Updated: 2022/09/06 20:50:43 by rsiqueir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 PUSH = push
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -g3
 RM = rm -f
 
 SRCS =	src/main.c				\
@@ -30,7 +30,13 @@ OBJS = $(SRCS:%.c=%.o)
 
 all: $(PUSH) 
 
-limpo: all clean
+a: all clean
+
+check:
+	valgrind --show-leak-kinds=all --track-origins=yes --leak-check=full ./push 1 3 4 -5 6
+
+check4:
+	valgrind --show-leak-kinds=all --track-origins=yes --leak-check=full ./push -1 3 4 -5
 
 $(PUSH):		$(OBJS)
 					$(CC) $(CFLAGS)  $(OBJS) -o $(PUSH)

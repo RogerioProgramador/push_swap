@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:52:02 by coder             #+#    #+#             */
-/*   Updated: 2022/09/03 20:52:09 by coder            ###   ########.fr       */
+/*   Updated: 2022/09/08 07:16:58 by rsiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 typedef struct	s_stack
 {
-	struct s_stack	*next;
 	int				content;
 	size_t			normalized_content;
 }				t_stack;
@@ -27,8 +26,8 @@ typedef struct s_push
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	int		first;
-	int		stack_size;
+	int		stack_size_a;
+	int		stack_size_b;
 }			t_push;
 
 /* allocate */

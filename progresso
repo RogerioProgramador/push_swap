@@ -1,0 +1,5 @@
+As operações não estão funcionando corretamente,
+corrigir memmove para se adaptar ao projeto.
+
+utilização de movimentos de forma consecutiva modifica
+a memória incorretamente.
