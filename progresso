@@ -1,5 +1,4 @@
-As operações não estão funcionando corretamente,
-corrigir memmove para se adaptar ao projeto.
-
-utilização de movimentos de forma consecutiva modifica
-a memória incorretamente.
+Operações modificadas e funcionando
+Ordenações de até quatro itens funcionando
+Leaks Resolvidos
+Acertar Radix

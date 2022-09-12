@@ -6,7 +6,7 @@
 /*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:52:02 by coder             #+#    #+#             */
-/*   Updated: 2022/09/08 07:16:58 by rsiqueir         ###   ########.fr       */
+/*   Updated: 2022/09/12 01:06:36 by rsiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ typedef struct s_push
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	int		stack_size_a;
-	int		stack_size_b;
+	size_t	stack_size_a;
+	size_t	stack_size_b;
 }			t_push;
 
 /* allocate */
@@ -57,9 +57,9 @@ int		ft_isdigit(int c);
 int		ft_atoi(const char *str);
 
 /* stack functions */
-int	ft_stacksize(t_stack *lst);
-t_stack	*ft_stack_new(int content);
-t_stack	*ft_stacklast(t_stack *lst);
-void	ft_stack_add_back(t_stack **lst, t_stack *new);
+void    move_memmory_foward(t_stack *stack, size_t size);
+void	move_memmory_back(t_stack *stack, size_t size);
+void	swap(t_stack *a, t_stack *b);
+int		find_min_number(t_stack *stack, size_t size);
 
 #endif

@@ -1,60 +1,62 @@
-// /* ************************************************************************** */
-// /*                                                                            */
-// /*                                                        :::      ::::::::   */
-// /*   stack_functions.c                                  :+:      :+:    :+:   */
-// /*                                                    +:+ +:+         +:+     */
-// /*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
-// /*                                                +#+#+#+#+#+   +#+           */
-// /*   Created: 2022/07/11 02:23:50 by coder             #+#    #+#             */
-// /*   Updated: 2022/09/04 23:01:14 by rsiqueir         ###   ########.fr       */
-// /*                                                                            */
-// /* ************************************************************************** */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_functions.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/11 02:23:50 by coder             #+#    #+#             */
+/*   Updated: 2022/09/12 00:45:34 by rsiqueir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// # include "../pushswap.h"
+# include "../pushswap.h"
 
-// int	ft_stacksize(t_stack *lst)
-// {
-// 	int	i;
+void    move_memmory_foward(t_stack *stack, size_t size)
+{
+	if (size == 0)
+		return ;
+	while (size > 0)
+	{
+		stack[size] = stack[size - 1];
+		size--;
+	}
+}
 
-// 	i = 0;
-// 	while (lst)
-// 	{
-// 		lst = lst->next;
-// 		i++;
-// 	}
-// 	return (i);
-// }
+void	move_memmory_back(t_stack *stack, size_t size)
+{
+	int	i;
 
-// t_stack	*ft_stacklast(t_stack *lst)
-// {
-// 	if (!lst)
-// 		return (NULL);
-// 	while (lst -> next)
-// 		lst = lst -> next;
-// 	return (lst);
-// }
+	i = 0;
+	if (size == 0)
+		return ;
+	while (i < size)
+	{
+		stack[i] = stack[i + 1];
+		i++;
+	}
+}
 
-// void	ft_stack_add_back(t_stack **lst, t_stack *new)
-// {
-// 	t_stack	*pointer;
+void	swap(t_stack *a, t_stack *b)
+{
+	t_stack tmp;
 
-// 	if (!*lst)
-// 	{
-// 		*lst = new;
-// 		return ;
-// 	}
-// 	pointer = ft_stacklast(*lst);
-// 	pointer->next = new;
-// }
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
 
-// t_stack	*ft_stack_new(int content)
-// {
-// 	t_stack	*new;
+int find_min_number(t_stack *stack, size_t size)
+{
+    int i;
+	int	number;
 
-// 	new = (t_stack *)malloc(sizeof(t_stack) * 1);
-// 	if (!new)
-// 		return (NULL);
-// 	new -> content = content;
-// 	new -> next = NULL;
-// 	return (new);
-// }
+    i = 0;
+	number = stack[0].content;
+	while (++i < size)
+	{
+		if (stack[i].content < number)
+			number = stack[i].content;
+	}
+	return (number);
+}
