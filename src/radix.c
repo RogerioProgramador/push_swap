@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 05:50:17 by coder             #+#    #+#             */
-/*   Updated: 2022/09/12 01:08:50 by rsiqueir         ###   ########.fr       */
+/*   Updated: 2022/09/12 19:06:57 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushswap.h"
 
-static int	get_bits(t_push *stacks)
+static size_t	get_bits(t_push *stacks)
 {
     t_stack	*stack;
     int     i;
-	int		max;
-	int		max_bits;
+	size_t		max;
+	size_t		max_bits;
 
     i = -1;
 	max_bits = 0;
@@ -25,13 +25,14 @@ static int	get_bits(t_push *stacks)
     max = stack[0].content;
 	while (++i < stacks->stack_size_a)
 	{
-		if (stack[i].content > max)
-			max = stack[i].content;
+		if (stack[i].normalized_content > max)
+			max = stack[i].normalized_content;
 	}
 	while ((max >> max_bits) != 0)
 		max_bits++;
 	return (max_bits);
 }
+
 
 void normalize_content(t_push *stacks)
 {
@@ -53,12 +54,10 @@ void	radix_sort(t_push *stacks)
 	int		i;
 	int		j;
 	int		size;
-	t_stack	*stack;
-	int		bits;
+	size_t	bits;
 
 	i = -1;
 	size = stacks->stack_size_a;
-	stack = stacks->stack_a;
 	normalize_content(stacks);
 	bits = get_bits(stacks);
 	while (++i < bits)
@@ -66,7 +65,7 @@ void	radix_sort(t_push *stacks)
 		j = -1;
 		while (++j < size)
 		{
-			if (((stack[0].normalized_content >> i) & 1) == 1)
+			if (((stacks->stack_a[0].normalized_content >> i) & 1) == 1)
 				ra(stacks);
 			else
 				pb(stacks);
@@ -75,4 +74,3 @@ void	radix_sort(t_push *stacks)
 			pa(stacks);
 	}
 }
-

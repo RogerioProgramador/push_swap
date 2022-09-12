@@ -1,4 +1,3 @@
-Operações modificadas e funcionando
-Ordenações de até quatro itens funcionando
-Leaks Resolvidos
-Acertar Radix
+Radix resolvido
+Acertar erros de validação. não ordena com 0 por erro de duplicata??
+Acertar Norminette

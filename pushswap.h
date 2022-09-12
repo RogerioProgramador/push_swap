@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:52:02 by coder             #+#    #+#             */
-/*   Updated: 2022/09/12 01:06:36 by rsiqueir         ###   ########.fr       */
+/*   Updated: 2022/09/12 19:10:52 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef struct	s_stack
+typedef struct s_stack
 {
 	int				content;
 	size_t			normalized_content;
@@ -34,11 +34,11 @@ typedef struct s_push
 void	allocate(t_push *ps, int size, char **values);
 
 /* operations */
-void sa(t_push *ps);
-void pa(t_push *ps);
-void pb(t_push *ps);
-void ra(t_push *ps);
-void rra(t_push *ps);
+void	sa(t_push *ps);
+void	pa(t_push *ps);
+void	pb(t_push *ps);
+void	ra(t_push *ps);
+void	rra(t_push *ps);
 
 /* sorting */
 void	sort(t_push *ps);
@@ -57,7 +57,7 @@ int		ft_isdigit(int c);
 int		ft_atoi(const char *str);
 
 /* stack functions */
-void    move_memmory_foward(t_stack *stack, size_t size);
+void	move_memmory_foward(t_stack *stack, size_t size);
 void	move_memmory_back(t_stack *stack, size_t size);
 void	swap(t_stack *a, t_stack *b);
 int		find_min_number(t_stack *stack, size_t size);

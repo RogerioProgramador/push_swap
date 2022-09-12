@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+         #
+#    By: coder <coder@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/20 13:20:43 by rsiqueir          #+#    #+#              #
-#    Updated: 2022/09/06 20:50:43 by rsiqueir         ###   ########.fr        #
+#    Updated: 2022/09/12 19:07:21 by coder            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ all: $(PUSH)
 a: all clean
 
 check:
-	valgrind --show-leak-kinds=all --track-origins=yes --leak-check=full ./push 1 3 4 -5 6
+	valgrind --show-leak-kinds=all --track-origins=yes --leak-check=full ./push 1 3 4 -5 6 -8 -9
 
 check4:
 	valgrind --show-leak-kinds=all --track-origins=yes --leak-check=full ./push -1 3 4 -5
