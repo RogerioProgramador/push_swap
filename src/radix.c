@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 05:50:17 by coder             #+#    #+#             */
-/*   Updated: 2022/09/12 19:06:57 by coder            ###   ########.fr       */
+/*   Updated: 2022/09/12 21:26:30 by rsiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ static size_t	get_bits(t_push *stacks)
 		max_bits++;
 	return (max_bits);
 }
-
 
 void normalize_content(t_push *stacks)
 {

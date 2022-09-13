@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:52:02 by coder             #+#    #+#             */
-/*   Updated: 2022/09/12 19:10:52 by coder            ###   ########.fr       */
+/*   Updated: 2022/09/12 21:17:18 by rsiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,6 @@ void	radix_sort(t_push *push);
 
 /* validate args */
 void	validate(int argc, char *argv[]);
-int		has_digit(char *argv[]);
-int		has_duplicate(char *argv[]);
-void	handle_error(int i);
 
 /* libft */
 size_t	ft_strlen(const char *s);

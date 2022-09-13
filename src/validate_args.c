@@ -3,48 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   validate_args.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 23:48:45 by coder             #+#    #+#             */
-/*   Updated: 2022/09/12 19:16:20 by coder            ###   ########.fr       */
+/*   Updated: 2022/09/12 21:23:15 by rsiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../pushswap.h"
 
-int has_duplicate(char *argv[])
+static int has_duplicate(char *argv[], size_t size)
 {	
-	int	i;
-	int	j;
-	int size;
+	int	i[2];
 	int	*pointer;
 
-	i = 0;
-	size = 0;
-	while (argv[size])
-		size++;
-	pointer = (int *) malloc(size * sizeof(int));
+	i[0] = -1;
+	pointer = (int *)malloc(size * sizeof(int));
 	if (!pointer)
 		return (1);
-	while (argv[i])
+	while (++i[0] < size)
+		pointer[i[0]] = ft_atoi(argv[i[0] + 1]);
+	i[0] = -1;
+	while (++i[0] < size)
 	{
-		pointer[i] = ft_atoi(argv[i]);
-		i++;
-	}
-	i = 0;
-	while (i < size)
-	{
-		j = i + 1;
-		while (j < size)
+		i[1] = i[0];
+		while (++i[1] < size)
 		{
-			if (pointer[i] == pointer[j])
+			if (pointer[i[0]] == pointer[i[1]])
 			{
 				free(pointer);
 				return (1);
 			}
-			j++;
 		}
-		i++;
 	}
 	free(pointer);
 	return (0);
@@ -68,7 +58,7 @@ static int	has_invalid_digits(char *arg)
 	return (0);
 }
 
-int has_digit(char *argv[])
+static int has_digit(char *argv[])
 {
 	int i;
 
@@ -82,7 +72,7 @@ int has_digit(char *argv[])
 	return(0);
 }
 
-void	handle_error(int i)
+static void	handle_error(int i)
 {
 	if (i == 0)
 		ft_putstr("error: invalid arguments\n");
@@ -99,6 +89,6 @@ void	validate(int argc, char *argv[])
 		handle_error(0);
 	else if (has_digit(argv))
 		handle_error(1);
-	else if (has_duplicate(argv))
+	else if (has_duplicate(argv, argc - 1))
 		handle_error(2);
 }
