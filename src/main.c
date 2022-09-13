@@ -6,7 +6,7 @@
 /*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:50:50 by coder             #+#    #+#             */
-/*   Updated: 2022/09/12 21:32:17 by rsiqueir         ###   ########.fr       */
+/*   Updated: 2022/09/12 21:33:51 by rsiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ int	main(int argc, char **argv)
 	validate(argc, argv);
 	allocate(&ps, argc, argv);
 	sort(&ps);
-	test_stack(&ps);
+	// test_stack(&ps);
 	clear_stack(&ps);
 }
