@@ -6,7 +6,7 @@
 /*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 02:23:50 by coder             #+#    #+#             */
-/*   Updated: 2022/09/12 00:45:34 by rsiqueir         ###   ########.fr       */
+/*   Updated: 2022/09/12 21:32:27 by rsiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,10 @@ int find_min_number(t_stack *stack, size_t size)
 			number = stack[i].content;
 	}
 	return (number);
+}
+
+void clear_stack(t_push *ps)
+{
+	free(ps->stack_a);
+	free(ps->stack_b);
 }

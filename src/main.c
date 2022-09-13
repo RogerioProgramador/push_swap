@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:50:50 by coder             #+#    #+#             */
-/*   Updated: 2022/09/12 19:09:21 by coder            ###   ########.fr       */
+/*   Updated: 2022/09/12 21:32:17 by rsiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,5 @@ int	main(int argc, char **argv)
 	allocate(&ps, argc, argv);
 	sort(&ps);
 	test_stack(&ps);
-	free(ps.stack_a);
-	free(ps.stack_b);
+	clear_stack(&ps);
 }

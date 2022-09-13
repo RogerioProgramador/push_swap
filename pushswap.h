@@ -6,7 +6,7 @@
 /*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:52:02 by coder             #+#    #+#             */
-/*   Updated: 2022/09/12 21:17:18 by rsiqueir         ###   ########.fr       */
+/*   Updated: 2022/09/12 21:32:47 by rsiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ int		ft_atoi(const char *str);
 /* stack functions */
 void	move_memmory_foward(t_stack *stack, size_t size);
 void	move_memmory_back(t_stack *stack, size_t size);
-void	swap(t_stack *a, t_stack *b);
 int		find_min_number(t_stack *stack, size_t size);
+void	swap(t_stack *a, t_stack *b);
+void	clear_stack(t_push *ps);
 
 #endif
