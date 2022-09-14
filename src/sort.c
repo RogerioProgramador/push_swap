@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 07:32:58 by coder             #+#    #+#             */
-/*   Updated: 2022/09/12 19:14:21 by coder            ###   ########.fr       */
+/*   Updated: 2022/09/14 20:00:08 by rsiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,35 @@ static void	order_four(t_push *stacks)
 	pa(stacks);
 }
 
+static void	order_seven_or_less(t_push *stacks)
+{
+	int		i;
+	int		min;
+	int		size[2];
+	t_stack	*stack;
+
+	size[0] = stacks->stack_size_a - 3;
+	size[1] = stacks->stack_size_a - 3;
+	while (size[0]--)
+	{
+		i = -1;
+		stack = stacks->stack_a;
+		min = find_min_number(stacks->stack_a, stacks->stack_size_a);
+		while (++i < stacks->stack_size_a)
+		{
+			if (stack[0].content == min)
+			{
+				pb(stacks);
+				break ;
+			}
+			ra(stacks);
+		}
+	}
+	order_three(stacks);
+	while (size[1]--)
+		pa(stacks);
+}
+
 static int	is_not_sorted(t_push *ps)
 {
 	int	i;
@@ -90,6 +119,8 @@ void	sort(t_push *ps)
 			order_three(ps);
 		else if (ps->stack_size_a == 4)
 			order_four(ps);
+		else if (ps->stack_size_a < 7)
+			order_seven_or_less(ps);
 		else
 			radix_sort(ps);
 	}
