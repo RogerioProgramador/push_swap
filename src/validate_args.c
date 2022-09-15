@@ -6,13 +6,13 @@
 /*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 23:48:45 by coder             #+#    #+#             */
-/*   Updated: 2022/09/14 22:37:52 by rsiqueir         ###   ########.fr       */
+/*   Updated: 2022/09/14 23:45:32 by rsiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "push_swap.h"
 
-int	bigger_than_int(long *number, size_t i[2])
+static int	bigger_than_int(long *number, size_t i[2])
 {
 	if (number[i[0]] > 2147483647 || number[i[0]] < -2147483648
 		|| number[i[1]] > 2147483647 || number[i[1]] < -2147483648)
@@ -20,7 +20,7 @@ int	bigger_than_int(long *number, size_t i[2])
 	return (0);
 }
 
-static int	has_duplicate(char *argv[], size_t size)
+static int	has_duplicate_or_number_bigger_than_int(char *argv[], size_t size)
 {	
 	size_t	i[2];
 	long	*pointer;
@@ -84,7 +84,8 @@ void	validate(int argc, char *argv[])
 {
 	if (argc < 2 || !argv[1])
 		exit(0);
-	if (has_digit(argv) || has_duplicate(argv, argc - 1))
+	if (has_digit(argv)
+		|| has_duplicate_or_number_bigger_than_int(argv, argc - 1))
 	{
 		write(2, "Error\n", 6);
 		exit(1);

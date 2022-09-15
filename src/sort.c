@@ -6,11 +6,11 @@
 /*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 07:32:58 by coder             #+#    #+#             */
-/*   Updated: 2022/09/14 22:37:15 by rsiqueir         ###   ########.fr       */
+/*   Updated: 2022/09/14 23:45:32 by rsiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "push_swap.h"
 
 static int	is_not_sorted(t_push *ps)
 {

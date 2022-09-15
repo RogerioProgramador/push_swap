@@ -6,14 +6,14 @@
 #    By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/20 13:20:43 by rsiqueir          #+#    #+#              #
-#    Updated: 2022/09/14 22:34:48 by rsiqueir         ###   ########.fr        #
+#    Updated: 2022/09/14 22:53:37 by rsiqueir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-PUSH = push_swap
+NAME = push_swap
 
-CC = cc -Wall -Werror -Wextra
-CFLAGS = -g3
+CC = cc
+CFLAGS = -Wall -Werror -Wextra
 RM = rm -f
 
 SRCS =	src/main.c				\
@@ -27,19 +27,20 @@ SRCS =	src/main.c				\
 
 OBJS = $(SRCS:%.c=%.o)
 
-all: $(PUSH) 
+all: $(NAME)
 
-$(PUSH):		$(OBJS)
-					$(CC) $(CFLAGS)  $(OBJS) -o $(PUSH)
+%.o:    %.c
+	$(CC) $(CFLAGS) -I./include -c $< -o $@
+
+$(NAME):		$(OBJS)
+					$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
-	$(RM) src/*.o
+	$(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(PUSH) 
+	$(RM) $(NAME) 
 
 re: fclean all
 
-bonus: all
-
-.PHONY:	all clean fclean re bonus
+.PHONY:	all clean fclean re

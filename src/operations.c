@@ -6,11 +6,11 @@
 /*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 15:20:04 by coder             #+#    #+#             */
-/*   Updated: 2022/09/14 22:32:37 by rsiqueir         ###   ########.fr       */
+/*   Updated: 2022/09/14 23:45:32 by rsiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "push_swap.h"
 
 void	ra(t_push *ps)
 {

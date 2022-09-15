@@ -6,11 +6,11 @@
 /*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 05:50:17 by coder             #+#    #+#             */
-/*   Updated: 2022/09/14 22:38:30 by rsiqueir         ###   ########.fr       */
+/*   Updated: 2022/09/14 23:45:32 by rsiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "push_swap.h"
 
 static size_t	get_bits(t_push *stacks)
 {

@@ -6,11 +6,11 @@
 /*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 02:23:50 by coder             #+#    #+#             */
-/*   Updated: 2022/09/14 22:35:28 by rsiqueir         ###   ########.fr       */
+/*   Updated: 2022/09/14 23:45:32 by rsiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "push_swap.h"
 
 void	move_memmory_foward(t_stack *stack, size_t size)
 {
