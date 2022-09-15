@@ -6,7 +6,7 @@
 /*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 05:50:17 by coder             #+#    #+#             */
-/*   Updated: 2022/09/12 21:26:30 by rsiqueir         ###   ########.fr       */
+/*   Updated: 2022/09/14 22:38:30 by rsiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 static size_t	get_bits(t_push *stacks)
 {
-    t_stack	*stack;
-    int     i;
-	size_t		max;
-	size_t		max_bits;
+	size_t	i;
+	t_stack	*stack;
+	size_t	max;
+	size_t	max_bits;
 
-    i = -1;
+	i = -1;
 	max_bits = 0;
-    stack = stacks->stack_a;
-    max = stack[0].content;
+	stack = stacks->stack_a;
+	max = stack[0].normalized_content;
 	while (++i < stacks->stack_size_a)
 	{
 		if (stack[i].normalized_content > max)
@@ -33,24 +33,24 @@ static size_t	get_bits(t_push *stacks)
 	return (max_bits);
 }
 
-void normalize_content(t_push *stacks)
+void	normalize_content(t_push *stacks)
 {
-    int     i;
+	size_t	i;
 	int		min;
 	t_stack	*stack;
 
-    i = -1;
+	i = -1;
 	stack = stacks->stack_a;
-    min = find_min_number(stacks->stack_a, stacks->stack_size_a);
+	min = find_min_number(stacks->stack_a, stacks->stack_size_a);
 	if (min < 0)
 		min = min * -1;
 	while (++i < stacks->stack_size_a)
-        stack[i].normalized_content = stack[i].content + min;
+		stack[i].normalized_content = stack[i].content + min;
 }
 
 void	radix_sort(t_push *stacks)
 {
-	int		i;
+	size_t	i;
 	int		j;
 	int		size;
 	size_t	bits;

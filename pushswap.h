@@ -6,7 +6,7 @@
 /*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:52:02 by coder             #+#    #+#             */
-/*   Updated: 2022/09/14 19:30:52 by rsiqueir         ###   ########.fr       */
+/*   Updated: 2022/09/14 22:04:15 by rsiqueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-
-
 
 typedef struct s_stack
 {
