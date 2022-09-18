@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   allocate.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 07:15:14 by coder             #+#    #+#             */
-/*   Updated: 2022/09/14 23:45:32 by rsiqueir         ###   ########.fr       */
+/*   Updated: 2022/09/15 17:58:28 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,8 @@ void	allocate(t_push *ps, int size, char **values)
 
 	init(&size, &i, ps);
 	while (++i <= size)
+	{
 		ps->stack_a[i - 1].content = ft_atol(values[i]);
+		ps->stack_b[i - 1].content = ft_atol(values[i]);
+	}
 }
